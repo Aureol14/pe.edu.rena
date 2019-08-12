@@ -10,12 +10,18 @@ public class PcBuilder {
 	private int capacidadDisco = 1024;
 
 	public PcBuilder() {
-		
+
 	}
-	//Copy Constructor
+
+	// Copy Constructor
 	public PcBuilder(PcBuilder otro) {
 		this.capacidadDisco = otro.capacidadDisco;
-		//TODO ...
+		this.tipoProcesador = otro.tipoProcesador;
+		this.marcaProcesador = otro.marcaProcesador;
+		this.capacidadRam = otro.capacidadRam;
+		this.nombreRam = otro.nombreRam;
+		this.tipoDisco = otro.tipoDisco;
+		this.capacidadDisco = otro.capacidadDisco;
 	}
 
 	public PcBuilder setCapacidadProcesador(double capacidadProcesador) {// setter builder
@@ -52,12 +58,10 @@ public class PcBuilder {
 		this.capacidadDisco = capacidadDisco;
 		return this;
 	}
+
 	public Pc construirPc() {
-		return new Pc(
-				new Procesador(capacidadProcesador, tipoProcesador, marcaProcesador),
-				new Disco(tipoDisco, capacidadDisco),
-				new Ram(capacidadRam, nombreRam)
-				);
+		return new Pc(new Procesador(capacidadProcesador, tipoProcesador, marcaProcesador),
+				new Disco(tipoDisco, capacidadDisco), new Ram(capacidadRam, nombreRam));
 	}
 
 }

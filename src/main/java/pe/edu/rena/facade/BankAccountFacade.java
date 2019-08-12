@@ -1,4 +1,4 @@
-xpackage pe.edu.rena.facade;
+package pe.edu.rena.facade;
 
 public class BankAccountFacade {
 	private int accountNumber;

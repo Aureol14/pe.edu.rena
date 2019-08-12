@@ -7,16 +7,17 @@ public class CompradorPc {
 		Ram ram = new Ram(4, "GB");
 		Pc armarPc = new Pc(procesador, disco, ram);
 		System.out.println(armarPc);
-//		System.out.println("La pc contiene: "+procesador"\n" +disco "\n" +ram );
 		Pc pc2 = new PcBuilder().construirPc();
 		System.out.println(pc2);
-		Pc pc3 = new PcBuilder().setTipoDisco("SSD").setCapacidadRam(32).construirPc();
+		Pc pc3 = new PcBuilder().setTipoDisco("SSD").setCapacidadRam(32).
+				construirPc();
 		System.out.println(pc3);
 		PcBuilder nuevaPlantillaLaptopGamer = new PcBuilder(new PcBuilder()
 				.setCapacidadProcesador(3.8)
 				.setCapacidadRam(32)
 				.setCapacidadDisco(2048)
 				.setTipoDisco("SSD"));
-		Pc pc = new PcBuilder(nuevaPlantillaLaptopGamer).setCapacidadDisco(1024).setCapacidadRam(64).construirPc();
+		Pc pc = new PcBuilder(nuevaPlantillaLaptopGamer).
+				setCapacidadDisco(1024).setCapacidadRam(64).construirPc();
 	}
 }
