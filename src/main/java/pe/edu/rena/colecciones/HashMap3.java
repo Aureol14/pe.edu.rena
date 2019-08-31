@@ -14,15 +14,15 @@ class Datos {
 		this.telefono = telefono;
 	}
 
-	public String getNombre(String nombre) {
+	public String getNombre() {
 		return this.nombre;
 	}
 
-	public String getApellido(String apellido) {
+	public String getApellido() {
 		return this.apellido;
 	}
 
-	public int getTelefono(Integer telefono) {
+	public int getTelefono() {
 		return this.telefono;
 	}
 	@Override
