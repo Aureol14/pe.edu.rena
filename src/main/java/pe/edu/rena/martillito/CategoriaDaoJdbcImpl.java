@@ -61,7 +61,7 @@ public class CategoriaDaoJdbcImpl implements CategoriaDao {
 	}
 
 	@Override
-	public Categoria crearCategoriategoria(Categoria categoria) {
+	public Categoria crearCategoria(Categoria categoria) {
 		// CREATE
 		String url = "jdbc:mysql://localhost:3306/martillito";
 		String usuario = "root";
@@ -104,10 +104,10 @@ public class CategoriaDaoJdbcImpl implements CategoriaDao {
 		String password = "";
 		try (Connection cn = DriverManager.getConnection(url, usuario, password)) {
 			try (PreparedStatement pstmt = cn
-					.prepareStatement("UPDATE categoria set id=?, nombre=?, descripcion=? where id=?")) {
-				pstmt.setInt(1, categoria.getId());
-				pstmt.setString(2, categoria.getNombre());
-				pstmt.setString(3, categoria.getDescripcion());
+					.prepareStatement("UPDATE categoria set nombre=?, descripcion=? where id=?")) {
+				pstmt.setString(1, categoria.getNombre());
+				pstmt.setString(2, categoria.getDescripcion());
+				pstmt.setInt(3, categoria.getId());
 				pstmt.executeUpdate();
 			}
 		} catch (SQLException e) {
