@@ -32,14 +32,14 @@ public class LectorComandos {
 	static Producto leerProducto() {
 		System.out.print("Ingrese nombre: ");
 		String nombre = scanner.nextLine();
-		System.out.println("Ingrese la cantidad: ");
+		System.out.print("Ingrese la cantidad: ");
 		int cantidad = scanner.nextInt();
 		scanner.nextLine();
 		return new Producto(nombre,cantidad);
 	}
 	static boolean continuarLectura() {
 		do {
-		System.out.print("Desea agregar un nuevo producto? S/N");
+		System.out.print("Desea agregar un nuevo producto? S/N: ");
 		String rspta = scanner.nextLine().toUpperCase();
 		if("S".equals(rspta)) {
 			return true;
