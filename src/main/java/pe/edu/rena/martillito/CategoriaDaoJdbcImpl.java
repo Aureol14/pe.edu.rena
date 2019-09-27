@@ -27,12 +27,14 @@ public class CategoriaDaoJdbcImpl implements CategoriaDao {
 
 	@Override
 	public List<Categoria> obtenerTodos() {
+		/* es solo un ejemplo
 		try (Connection cn = JDBCUtiles.obtenerConexion()) {
 			return JDBCUtiles.leerMuchosResultados(cn, "select id,nombre,descripcion from categoria",
 					mapeadorCategoria);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		*/
 		return Collections.emptyList();
 	}
 
