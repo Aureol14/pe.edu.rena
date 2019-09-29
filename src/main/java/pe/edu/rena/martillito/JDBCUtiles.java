@@ -62,14 +62,17 @@ public final class JDBCUtiles {// nadie puede heredar
 			e.printStackTrace();
 		}
 		return defaultValue;
-	}public static PreparedStatement ejecutarOperacionEscritura(Connection cn, String sql, Object ...params) throws SQLException{
-		PreparedStatement pstmt = cn.prepareStatement(sql);
-		if (params != null && params.length > 0) {
-			for (int i = 0; i < params.length; i++) {
-				pstmt.setObject(i + 1, params[i]);
-			}
-		}
-		return (PreparedStatement) pstmt.executeQuery();
 	}
-	
+
+	public static int ejecutarOperacionEscritura(Connection cn, String sql, Object... params) throws SQLException {
+		try (PreparedStatement pstmt = cn.prepareStatement(sql)) {
+			if (params != null && params.length > 0) {
+				for (int i = 0; i < params.length; i++) {
+					pstmt.setObject(i + 1, params[i]);
+				}
+			}
+			return pstmt.executeUpdate();
+		}
+	}
+
 }

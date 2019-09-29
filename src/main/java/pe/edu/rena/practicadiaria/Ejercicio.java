@@ -39,8 +39,9 @@ class Alumno {
 }
 
 public class Ejercicio {
+	private static Scanner scn;
 	public static void main(String[] args) {
-		Scanner scn = new Scanner(System.in);
+		scn = new Scanner(System.in);
 		int i, ca = 0, cd = 0;
 		double pmy = 0.0, pmn = 0.0;
 		pmn = 99;

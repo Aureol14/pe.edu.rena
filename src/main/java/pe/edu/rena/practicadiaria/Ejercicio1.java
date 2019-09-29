@@ -1,10 +1,9 @@
 package pe.edu.rena.practicadiaria;
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
 
 class EmpleadoNuevo {
+
 	private String dni;
 	private String nombre;
 	private byte edad;
@@ -60,22 +59,30 @@ class EmpleadoNuevo {
 }
 
 public class Ejercicio1 {
+	private static Scanner scn;
+
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		for(int i=0;i<3;i++) {
+		scn = new Scanner(System.in);
+		for (int i = 0; i < 3; i++) {
 			System.out.print("Ingresar dni: ");
-			String dni = sc.nextLine();
+			String dni = scn.nextLine();
 			System.out.print("Ingresar nombre: ");
-			String nombre = sc.nextLine();
+			String nombre = scn.nextLine();
 			System.out.print("Ingresar edad: ");
-			byte edad = sc.nextByte();
+			byte edad = scn.nextByte();
 			System.out.print("Ingresar sueldo: ");
-			double sueldo = sc.nextDouble();
-			System.out.println("Ingresar el sexo H/M: ");
-			char sexo = sc.next().charAt(0);
-			sc.nextLine();
+			double sueldo = scn.nextDouble();
+			System.out.print("Ingresar el sexo H/M: ");
+			char sexo = scn.next().toUpperCase().charAt(0);
+			scn.nextLine();
+			EmpleadoNuevo empleado = new EmpleadoNuevo();
+			empleado.setDni(dni);
+			empleado.setNombre(nombre);
+			empleado.setEdad(edad);
+			empleado.setSueldo(sueldo);
+			empleado.setSexo(sexo);
+			System.out.println(empleado);
 		}
-		List<EmpleadoNuevo> lista = new LinkedList<>();
-		//TO-DO
+
 	}
 }

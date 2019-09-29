@@ -6,6 +6,6 @@ public interface CategoriaDao {
 	Categoria obtenerPorId(int id);
 	List<Categoria> obtenerTodos();
 	Categoria crearCategoria(Categoria categoria);
-	Categoria eliminarCategoriaPorId(int id);
+	void eliminarCategoriaPorId(int id);
 	Categoria actualizarCategoria(Categoria categoria);
 }
