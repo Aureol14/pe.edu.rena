@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.util.Collections;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+@Component
 public class CategoriaDaoJdbcImpl implements CategoriaDao {
 
 	MapeadorResultSet<Categoria> mapeadorCategoria = (rs) -> {

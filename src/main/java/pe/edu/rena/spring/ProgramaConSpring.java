@@ -1,5 +1,7 @@
 package pe.edu.rena.spring;
 
+import java.util.Scanner;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -21,7 +23,7 @@ public class ProgramaConSpring {
 			Mesero mesero = ctx.getBean(Mesero.class);
 			System.out.println(mesero.saludar("Luiggi"));
 			System.out.println(mesero.despedir("Luiggi"));
-			
+			LectorConsola lc = ctx.getBean(LectorConsola.class);
 		}
 	}
 	@Bean
@@ -31,5 +33,9 @@ public class ProgramaConSpring {
 	@Bean
 	public Carro carro(Motor motor) {
 		return new Carro(motor);
+	}
+	@Bean
+	public Scanner lectorPrincipal() {
+		return new Scanner(System.in);
 	}
 }

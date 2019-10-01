@@ -7,5 +7,5 @@ public interface ProductoDao {
 	List<Producto> ObtenerTodos();
 	Producto CrearProducto(Producto producto);
 	Producto ActualizarProducto(Producto producto);
-	Producto EliminarProductoPorId(int id);
+	void EliminarProductoPorId(int id);
 }
